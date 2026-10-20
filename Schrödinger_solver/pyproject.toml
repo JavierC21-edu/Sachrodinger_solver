@@ -1,0 +1,46 @@
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "schrodinger1d"
+version = "0.1.0"
+description = "A Python package for solving the one-dimensional time-independent Schrodinger equation."
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.7"
+]
+
+keywords = [
+    "quantum mechanics",
+    "schrodinger equation",
+    "finite differences",
+    "numerical methods",
+    "computational physics"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Operating System :: OS Independent"
+]
+
+
+[project.scripts]
+schrodinger1d = "schrodinger1d.interface:main"
+
+
+[tool.setuptools]
+package-dir = {"" = "packets"}
+
+
+[tool.setuptools.packages.find]
+where = ["packets"]
+include = ["schrodinger1d*"]
